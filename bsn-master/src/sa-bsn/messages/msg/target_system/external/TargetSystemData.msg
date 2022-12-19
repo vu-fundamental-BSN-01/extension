@@ -18,3 +18,13 @@ float64 abps_data
 float64 abpd_data
 float64 glc_data
 float64 patient_status 
+//modify
+float64 ther_batt
+float64 hyg_batt
+float64 baro_batt
+float64 ther_risk
+float64 hyg_risk
+float64 baro_risk
+float64 ther_data
+float64 hyg_data
+float64 baro_data
