@@ -80,25 +80,41 @@ void DataAccess::setUp() {
     components_batteries["g3t1_4"] = 100;
     components_batteries["g3t1_5"] = 100;
     components_batteries["g3t1_6"] = 100;
+       components_batteries["g5w1_1"] = 100;
+    components_batteries["g5W1_2"] = 100;
+    components_batteries["g5W1_3"] = 100;
+	
     components_costs_enactor["g3t1_1"] = 0;
     components_costs_enactor["g3t1_2"] = 0;
     components_costs_enactor["g3t1_3"] = 0;
     components_costs_enactor["g3t1_4"] = 0;
     components_costs_enactor["g3t1_5"] = 0;
     components_costs_enactor["g3t1_6"] = 0;
+        components_costs_enactor["g5w1_1"] = 0;
+    components_costs_enactor["g5W1_2"] = 0;
+    components_costs_enactor["g5W1_3"] = 0;
+	
     components_costs_engine["g3t1_1"] = 0;
     components_costs_engine["g3t1_2"] = 0;
     components_costs_engine["g3t1_3"] = 0;
     components_costs_engine["g3t1_4"] = 0;
     components_costs_engine["g3t1_5"] = 0;
     components_costs_engine["g3t1_6"] = 0;
+	
+	components_costs_engine["g5w1_1"] = 0;
+    components_costs_engine["g5W1_2"] = 0;
+    components_costs_engine["g5W1_3"] = 0;
+	
     components_reliabilities["g3t1_1"] = 1;
     components_reliabilities["g3t1_2"] = 1;
     components_reliabilities["g3t1_3"] = 1;
     components_reliabilities["g3t1_4"] = 1;
     components_reliabilities["g3t1_5"] = 1;
     components_reliabilities["g3t1_6"] = 1;
-    
+	
+	components_reliabilities["g5w1_1"] = 1;
+    components_reliabilities["g5W1_2"] = 1;
+    components_reliabilities["g5W1_3"] = 1;
     handle_persist = handle.subscribe("persist", 1000, &DataAccess::receivePersistMessage, this);
     server = handle.advertiseService("DataAccessRequest", &DataAccess::processQuery, this);
     targetSystemSub = handle.subscribe("TargetSystemData", 100, &DataAccess::processTargetSystemData, this);
@@ -113,6 +129,10 @@ void DataAccess::processTargetSystemData(const messages::TargetSystemData::Const
     components_batteries["g3t1_4"] = msg->abps_batt;
     components_batteries["g3t1_5"] = msg->abpd_batt;
     components_batteries["g3t1_6"] = msg->glc_batt;
+	 components_batteries["g5w1_1"] =  msg->ther_batt;
+    components_batteries["g5W1_2"] = msg->hyg_batt;
+    components_batteries["g5W1_3"] =  msg->baro_batt;
+	
 }
 
 void DataAccess::body() {
