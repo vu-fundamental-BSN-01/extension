@@ -18,7 +18,7 @@ float64 abps_data
 float64 abpd_data
 float64 glc_data
 float64 patient_status 
-//modify
+//modify(kim)
 float64 ther_batt
 float64 hyg_batt
 float64 baro_batt
