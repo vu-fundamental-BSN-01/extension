@@ -16,8 +16,8 @@
 
 #include "component/Sensor.hpp"
 
-#include "messages/SensorData.h"
-#include "services/PatientData.h"
+#include "messages/SensorData.h"  
+#include "services/PatientData.h" /* should be weather data */
 
 class G5W1_1 : public Sensor {
     	
@@ -27,7 +27,7 @@ class G5W1_1 : public Sensor {
 
 	private:
       	G5W1_1(const G5W1_1 &);
-    	G3T1_3 &operator=(const G5W1_1 &);
+    	G5W1_1 &operator=(const G5W1_1 &);
 
 		std::string label(double &risk);
     
