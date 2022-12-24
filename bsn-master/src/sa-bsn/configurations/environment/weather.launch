@@ -1,0 +1,66 @@
+<launch> 
+    <!-- Env Temperature Measurement Sensor -->    
+    <node name="weather" pkg="weather" type="weather" output="screen" />    
+
+    <param name="frequency" value="10" />
+
+    <param name="vitalSigns" value="envTemp, altitude, humidity" />
+
+    <!-- Frequency for changes in states of each markov in Hertz -->
+    <param name="envTemp_Change" value="0.2"/>
+    <param name="altitude_Change" value="0.1"/>
+    <param name="humidity_Change" value="0.1"/>
+    
+
+    <!-- Offsets for each changes, in seconds -->
+    <param name="envTemp_Offset" value="10"/>
+    <param name="altitude_Offset" value="10"/>
+    <param name="humidity_Offset" value="10"/>
+    
+      <!-- Markov chain for env temperature -->
+    <param name="envTemp_State0" value="25,51,21,3,0" />
+    <param name="envTemp_State1" value="5,50,43,2,0" />
+    <param name="envTemp_State2" value="0,4,85,11,0" />
+    <param name="envTemp_State3" value="0,1,32,67,0" />
+    <param name="envTemp_State4" value="0,0,0,0,0" />
+
+    <!-- Risk values for env temperature -->
+    <param name="envTemp_HighRisk0" value="0,31.99" />
+    <param name="envTemp_MidRisk0" value="32,35.99" />
+    <param name="envTemp_LowRisk" value="36,37.99" />
+    <param name="envTemp_MidRisk1" value="38,40.99" />
+    <param name="envTemp_HighRisk1" value="41,50" />
+
+    <!-- Markov chain for altitude -->
+    <param name="altitude_State0" value="0,0,0,0,0" />
+    <param name="altitude_State1" value="0,0,0,0,0" />
+    <param name="altitude_State2" value="0,0,90,8,2" />
+    <param name="altitude_State3" value="0,0,75,10,5" />
+    <param name="altitude_State4" value="0,0,5,35,60" />
+
+    <!-- Risk values for altitude -->
+    <param name="altitude_HighRisk0" value="-1,-1" />
+    <param name="altitude_MidRisk0" value="-1,-1" />
+    <param name="altitude_LowRisk" value="65,100" />
+    <param name="altitude_MidRisk1" value="55,65" />
+    <param name="altitude_HighRisk1" value="0,55" />
+
+    <!-- Markov chain for humidity -->
+    <param name="humidity_State0" value="72,21,4,2,1" />
+    <param name="humidity_State1" value="14,61,19,4,2" />
+    <param name="humidity_State2" value="1,17,60,20,2" />
+    <param name="humidity_State3" value="0,2,15,70,13" />
+    <param name="humidity_State4" value="0,1,2,20,77" />
+
+    <!-- Risk values for humidity -->
+    <param name="humidity_HighRisk0" value="0,70" />
+    <param name="humidity_MidRisk0" value="70,85" />
+    <param name="humidity_LowRisk" value="85,97" />
+    <param name="humidity_MidRisk1" value="97,115" />
+    <param name="humidity_HighRisk1" value="115,300" />
+
+ 
+
+
+</launch>
+
