@@ -18,6 +18,12 @@ namespace bsn {
                 return 4;
             else if (type == "glucosemeter")        
                 return 5;
+            else if (type == "evr_thermometer")        
+                return 6;
+            else if (type == "barometer")        
+                return 7;
+            else if (type == "hygrometer")        
+                return 8;
             else {
                 cout << "UNKNOWN TYPE " + type + '\n';
                 return -1;
