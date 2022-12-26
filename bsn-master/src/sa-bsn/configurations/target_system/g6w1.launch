@@ -1,5 +1,0 @@
-<launch> 
-    <node name="g6w1" pkg="component" type="g6w1" output="screen" />
-
-    <param name="frequency" value="3" /> <!-- 1 Hz  -->
-</launch>
