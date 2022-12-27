@@ -23,7 +23,7 @@ class G5W1_2 : public Sensor {
     	
   	public:
     	G5W1_2(int &argc, char **argv, const std::string &name);
-    	~G5W1_2(); /* why virtual (?)*/
+    	~G5W1_2();
 
 	private:
       	G5W1_2(const G5W1_2 &);
